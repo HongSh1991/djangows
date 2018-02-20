@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}blog titles{% endblock %}
+{% block content %}
+    <div class="row text-center vertical-middle-sm">
+        <h1>我的博客</h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <ul>
+               {% for blog in blogs %}
+                   <li>{{ blog.title }}</li>
+               {% endfor %}
+            </ul>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <h2>广告</h2>
+            <p>我的博客：http://www.dreamsky.com</p>
+            <img width="200px"
+                 src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1519066328763&di=d731b37888255c163226f30427a8c75a&imgtype=0&src=http%3A%2F%2Fup.enterdesk.com%2Fedpic_source%2Ffc%2Fda%2F87%2Ffcda8734b49103cc0f53766facee65cd.jpg">
+        </div>
+    </div>
+{% endblock %}
