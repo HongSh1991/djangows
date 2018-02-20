@@ -1,22 +1,27 @@
 {% extends "base.html" %}
-{% block title %}blog titles{% endblock %}
+{% block title %}blog list{% endblock %}
 {% block content %}
-    <div class="row text-center vertical-middle-sm">
-        <h1>我的博客</h1>
+    <div class="row text-left vertical-middle-sm">
+        <h3 style="padding-left: 3.2%;">欢迎访问洪帅的个人博客~</h3>
     </div>
-    <div class="row">
+    <div class="row" style="padding-top: 1.2%">
         <div class="col-xs-12 col-md-8">
             <ul>
                {% for blog in blogs %}
-                   <li>{{ blog.title }}</li>
+                   <li><a href="{{ blog.id }}">{{ blog.title }}</a></li>
                {% endfor %}
             </ul>
         </div>
         <div class="col-xs-6 col-md-4">
-            <h2>广告</h2>
-            <p>我的博客：http://www.dreamsky.com</p>
-            <img width="200px"
-                 src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1519066328763&di=d731b37888255c163226f30427a8c75a&imgtype=0&src=http%3A%2F%2Fup.enterdesk.com%2Fedpic_source%2Ffc%2Fda%2F87%2Ffcda8734b49103cc0f53766facee65cd.jpg">
+            <h3 style="font-weight: bolder">Personal Information:</h3>
+            <h4>HongSh</h4>
+            <p>
+                Tags: C#, Unity, VirtualReality, DeepLearning, Python<br>
+                Email：hjmrezl@outlook.com<br>
+                Address: Nanjing, Jiangsu<br>
+            </p>
+            <img width="320px"
+                 src="/static/images/02.jpg">
         </div>
     </div>
 {% endblock %}
