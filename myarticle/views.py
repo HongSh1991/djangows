@@ -4,3 +4,7 @@ from .models import ArticleColumn
 
 
 # Create your views here.
+@login_required(login_url='/account/login')
+def article_column(request):
+	columns = ArticleColumn.objects.filter(user=request.user)
+	return render(request, "article/column/article_column.html", {"columns": columns})
