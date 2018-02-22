@@ -9,12 +9,17 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 </head>
 <body>
-    {% include "header.html" %}
     <div class="container">
-        {% block content %}
-        {% endblock %}
+        {% include 'article/header.html' %}
+        <div class="col-md-2">
+            {% include 'article/leftslider.html' %}
+        </div>
+        <div class="col-md-10">
+            {% block content %}
+            
+            {% endblock %}
+        </div>
+        {% include 'article/footer.html' %}
     </div>
-    {% include "footer.html" %}
-    {% block javascript %}{% endblock %}
 </body>
 </html>

@@ -11,8 +11,25 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
-                <li><a href="{% url 'account:user_login' %}" >ADMINISTRATOR LOGIN</a></li>
+                {% if user.is_authenticated %}
+                    <li>
+                        <div class="dropdown" style="margin-top: 8px;">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu"
+                                    data-toggle="dropdown">{{ user.username }}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'article:article_column' %}">后台管理</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="{% url 'account:user_logout' %}">Logout</a> </li>
+                {% else %}
+                    <li><a href="{% url 'account:user_login' %}" >ADMINISTRATOR LOGIN</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>
 </div>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
